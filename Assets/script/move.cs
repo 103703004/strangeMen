@@ -8,6 +8,7 @@ public class move : MonoBehaviour {
     private float y;
     private float minusX;
     private float minusY;
+    private bool upRight;
 
     // Use this for initialization
     void Start () {
@@ -17,15 +18,22 @@ public class move : MonoBehaviour {
         //Debug.Log(y);
         minusX = Random.value;
         minusY = Random.value;
+        upRight = false;
         if (minusX < 0.5f)
         {
             //Debug.Log("a");
             x = -x;
+            upRight = true;
         }
         if (minusY < 0.5f)
         {
             //Debug.Log("b");
             y = -y;
+        }
+        if (!upRight)
+        {
+            GetComponent<Animation>().PlayQueued("leftFlip");
+            //Debug.Log("aa");
         }
     }
 	
@@ -37,6 +45,11 @@ public class move : MonoBehaviour {
         {
             //Debug.Log("c");
             x = -x;
+            if(upRight)
+                GetComponent<Animation>().PlayQueued("leftFlip");
+            else
+                GetComponent<Animation>().PlayQueued("rightFlip");
+            upRight = !upRight;
         }
         if (transform.position.y > 43.64 || transform.position.y < -43.64)
         {
@@ -50,8 +63,21 @@ public class move : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
+        //Debug.Log(other);
+        
         x = -x;
         y = -y;
+        if (upRight)
+        {
+            GetComponent<Animation>().PlayQueued("sayHiRight");
+            GetComponent<Animation>().PlayQueued("leftFlip");
+        }
+        else
+        {
+            GetComponent<Animation>().PlayQueued("sayHiLeft");
+            GetComponent<Animation>().PlayQueued("rightFlip");
+        }
+            
+        upRight = !upRight;
     }
 }

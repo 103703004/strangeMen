@@ -14,7 +14,8 @@ public class createMan : MonoBehaviour {
     private GameObject m;
     //private string url = "D://政大/數位內容畢製/face/Assets/img/body.png";
     private string url = "https://firebasestorage.googleapis.com/v0/b/webfinal-e58b9.appspot.com/o/%E5%83%91%E7%B7%A3.jpg?alt=media&token=f7634a76-4b94-4ac1-b57c-80f5eaaa0e4f";
-    private int manNumber;
+    public static int manNumber;
+    private Animation anim;
 
     // Use this for initialization
     void Start () {
@@ -25,23 +26,47 @@ public class createMan : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(manNumber == 1)
+            
+            if (manNumber == 1)
+            {
                 m = Instantiate(man1, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man1"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man1");
+            }
             else if (manNumber == 2)
+            {
                 m = Instantiate(man2, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man2"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man2");
+            }
             else if (manNumber == 3)
+            {
                 m = Instantiate(man3, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man3"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man3");
+            }
             else if (manNumber == 4)
+            {
                 m = Instantiate(man4, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man4"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man4");
+            }
             else if (manNumber == 5)
             {
                 m = Instantiate(man5, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man5"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man5");
                 manNumber = 0;
             }
                 
             body = m.transform.Find("body").gameObject;
             Debug.Log("space key was pressed");
-            StartCoroutine(loadImage());
+            //StartCoroutine(loadImage());
             manNumber++;
         }
             
@@ -59,6 +84,6 @@ public class createMan : MonoBehaviour {
         //body = m.transform.Find("body").gameObject;
         Rect rec = new Rect(0, 0, tex.width, tex.height);
         Sprite s = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
-        //body.GetComponent<Image>().sprite = s;
+        body.GetComponent<Image>().sprite = s;
     }
 }

@@ -448,7 +448,7 @@ MonoBehaviour:
   man2: {fileID: 1209769260886318, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
   man3: {fileID: 1774773160193770, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
   man4: {fileID: 1486658792345676, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
-  man5: {fileID: 1689355789290928, guid: 432f83b42064a344889668d170a4b772, type: 2}
+  man5: {fileID: 1084398910301040, guid: 432f83b42064a344889668d170a4b772, type: 2}
 --- !u!1 &1388060580
 GameObject:
   m_ObjectHideFlags: 0

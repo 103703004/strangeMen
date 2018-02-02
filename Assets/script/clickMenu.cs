@@ -22,19 +22,55 @@ public class clickMenu : MonoBehaviour {
     public void menu1()
     {
 
+        StopAnimMain();
+
+        //TODO 發芽
+        //anim.PlayQueued("dropWreath");
+
+        StartAnimMain();
+
+        transform.parent.gameObject.SetActive(false);
+    }
+
+    public void menu2()
+    {
+        StopAnimMain();
+
+        //TODO 天燈
+        //anim.PlayQueued("dropWreath");
+
+        StartAnimMain();
+
+        transform.parent.gameObject.SetActive(false);
+    }
+
+    public void menu3()
+    {
+        StopAnimMain();
+
+        anim.PlayQueued("dropWreath");
+
+        StartAnimMain();
+
+        transform.parent.gameObject.SetActive(false);
+    }
+
+    private void StopAnimMain()
+    {
         if (manNumber.Equals("man1"))
             anim.Stop("man1");
         else if (manNumber.Equals("man2"))
             anim.Stop("man2");
-        else if(manNumber.Equals("man3"))
+        else if (manNumber.Equals("man3"))
             anim.Stop("man3");
         else if (manNumber.Equals("man4"))
             anim.Stop("man4");
         else if (manNumber.Equals("man5"))
             anim.Stop("man5");
+    }
 
-        anim.PlayQueued("dropWreath");
-
+    private void StartAnimMain()
+    {
         if (manNumber.Equals("man1"))
         {
             anim["man1"].wrapMode = WrapMode.Loop;
@@ -60,19 +96,5 @@ public class clickMenu : MonoBehaviour {
             anim["man5"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man5");
         }
-
-        transform.parent.gameObject.SetActive(false);
-    }
-
-    public void menu2()
-    {
-        //transform.parent.transform.parent.GetComponent<Animation>().PlayQueued("");
-        transform.parent.gameObject.SetActive(false);
-    }
-
-    public void menu3()
-    {
-        //transform.parent.transform.parent.GetComponent<Animation>().PlayQueued("");
-        transform.parent.gameObject.SetActive(false);
     }
 }

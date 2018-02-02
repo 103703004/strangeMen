@@ -12,8 +12,8 @@ public class createMan : MonoBehaviour {
     public GameObject man5;
     private GameObject body;
     private GameObject m;
-    //private string url = "D://政大/數位內容畢製/face/Assets/img/body.png";
-    private string url = "https://firebasestorage.googleapis.com/v0/b/webfinal-e58b9.appspot.com/o/%E5%83%91%E7%B7%A3.jpg?alt=media&token=f7634a76-4b94-4ac1-b57c-80f5eaaa0e4f";
+    private string url = "D://政大/數位內容畢製/body/1.png";
+    //private string url = "https://firebasestorage.googleapis.com/v0/b/webfinal-e58b9.appspot.com/o/%E5%83%91%E7%B7%A3.jpg?alt=media&token=f7634a76-4b94-4ac1-b57c-80f5eaaa0e4f";
     public static int manNumber;
     private Animation anim;
 

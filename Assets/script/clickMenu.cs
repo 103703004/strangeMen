@@ -11,7 +11,7 @@ public class clickMenu : MonoBehaviour {
 	void Start () {
         anim = transform.parent.transform.parent.GetComponent<Animation>();
         manNumber = transform.parent.transform.parent.tag;
-        Debug.Log(manNumber);
+        //Debug.Log(manNumber);
     }
 	
 	// Update is called once per frame
@@ -21,52 +21,62 @@ public class clickMenu : MonoBehaviour {
 
     public void menu1()
     {
+        //TODO 發芽 春
+        //anim.PlayQueued("dropWreath");
 
-        StopAnimMain();
+        //TODO 冰淇淋 夏
+        //anim.PlayQueued("dropWreath");
 
-        //TODO 發芽
+        //TODO 中秋 秋
+        //anim.PlayQueued("dropWreath");
+
+        //TODO 泡澡 冬
         //anim.PlayQueued("dropWreath");
 
         StartAnimMain();
 
+        gameObject.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
     }
 
     public void menu2()
     {
-        StopAnimMain();
+        //TODO 天燈 春
+        //anim.PlayQueued("dropWreath");
 
-        //TODO 天燈
+        //TODO 衝浪 夏
+        //anim.PlayQueued("dropWreath");
+
+        //TODO 落葉 秋
+        //anim.PlayQueued("dropWreath");
+
+        //TODO 雪人 冬
         //anim.PlayQueued("dropWreath");
 
         StartAnimMain();
 
+        gameObject.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
     }
 
     public void menu3()
     {
-        StopAnimMain();
-
+        //TODO 花圈 春
         anim.PlayQueued("dropWreath");
+
+        //TODO 雨 夏
+        //anim.PlayQueued("dropWreath");
+
+        //TODO 螃蟹 秋
+        //anim.PlayQueued("dropWreath");
+
+        //TODO 鹿 冬
+        //anim.PlayQueued("dropWreath");
 
         StartAnimMain();
 
+        gameObject.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
-    }
-
-    private void StopAnimMain()
-    {
-        if (manNumber.Equals("man1"))
-            anim.Stop("man1");
-        else if (manNumber.Equals("man2"))
-            anim.Stop("man2");
-        else if (manNumber.Equals("man3"))
-            anim.Stop("man3");
-        else if (manNumber.Equals("man4"))
-            anim.Stop("man4");
-        else if (manNumber.Equals("man5"))
-            anim.Stop("man5");
     }
 
     private void StartAnimMain()
@@ -96,5 +106,6 @@ public class clickMenu : MonoBehaviour {
             anim["man5"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man5");
         }
+        transform.parent.transform.parent.gameObject.GetComponent<move>().isMove = true;
     }
 }

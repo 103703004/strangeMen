@@ -8,12 +8,16 @@ public class move : MonoBehaviour {
     private float y;
     private float minusX;
     private float minusY;
-    private bool upRight;
-    private Animation anim;
+    public bool upRight;
+    public Animation anim;
     private string manNumber;
+    public bool isMove;
+    public bool isTogether;
 
     // Use this for initialization
     void Start () {
+        isTogether = false;
+        isMove = true;
         anim = GetComponent<Animation>();
         manNumber = tag;
         Debug.Log(manNumber);
@@ -40,14 +44,15 @@ public class move : MonoBehaviour {
             StopAnimMain();
 
             anim.PlayQueued("leftFlip");
-
-            StartAnimMain();
         }
+        StartAnimMain();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += new Vector3(x, y, 0);
+        if((isMove) && (anim.IsPlaying("sayHiLeft") || anim.IsPlaying("sayHiRight") || anim.IsPlaying("rightFlip") || anim.IsPlaying("leftFlip") || anim.IsPlaying("man1") || anim.IsPlaying("man2") || anim.IsPlaying("man3") || anim.IsPlaying("man4") || anim.IsPlaying("man5")))
+            transform.position += new Vector3(x, y, 0);
+
         if (transform.position.x > 215.84 || transform.position.x < -215.84)
         {
             //Debug.Log("c");
@@ -76,26 +81,79 @@ public class move : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other);
-        x = -x;
-        y = -y;
-
-        StopAnimMain();
-
-        if (upRight)
+        Debug.Log(gameObject.ToString() + " " + isTogether.ToString());
+        if(gameObject.GetComponent<press>().isPress)
         {
-            anim.PlayQueued("sayHiRight");
-            anim.PlayQueued("leftFlip");
+            isTogether = true;
+            other.GetComponent<move>().isTogether = true;
+        }
+        else if (other.GetComponent<press>().isPress)
+        {
+            StopAnimMain();
+
+            if (upRight)
+            {
+                anim.PlayQueued("leftFlip");
+            }
+            else
+            {
+                anim.PlayQueued("rightFlip");
+            }
+            
+        }
+        else if (!isTogether)
+        {
+            isTogether = true;
+            other.GetComponent<move>().isTogether = true;
+
+            StopAnimMain();
+            other.GetComponent<move>().StopAnimMain();
+
+            if(upRight != other.GetComponent<move>().upRight)
+            {
+                if (gameObject.transform.position.y - 10 < other.transform.position.y && gameObject.transform.position.y + 10 > other.transform.position.y)
+                {
+                    if (upRight)
+                    {
+                        anim.PlayQueued("sayHiRight");
+                        other.GetComponent<move>().anim.PlayQueued("sayHiLeft");
+                    }
+                    else
+                    {
+                        anim.PlayQueued("sayHiLeft");
+                        other.GetComponent<move>().anim.PlayQueued("sayHiRight");
+                    }
+                    
+                }
+            }
+            
+            other.GetComponent<move>().StartAnimMain();
         }
         else
         {
-            anim.PlayQueued("sayHiLeft");
-            anim.PlayQueued("rightFlip");
+            StopAnimMain();
         }
-            
-        upRight = !upRight;
 
-        StartAnimMain();
+        x = -x;
+        y = -y;
+
+        if (!gameObject.GetComponent<press>().isPress)
+        {
+            if (upRight)
+            {
+                anim.PlayQueued("leftFlip");
+            }
+            else
+            {
+                anim.PlayQueued("rightFlip");
+            }
+
+            StartAnimMain();
+            upRight = !upRight;
+        }
+        
+        isTogether = false;
+
     }
 
     private void StopAnimMain()
@@ -112,7 +170,7 @@ public class move : MonoBehaviour {
             anim.Stop("man5");
     }
 
-    private void StartAnimMain()
+    public void StartAnimMain()
     {
         if (manNumber.Equals("man1"))
         {

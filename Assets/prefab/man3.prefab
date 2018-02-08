@@ -235,10 +235,10 @@ GameObject:
   - component: {fileID: 114670568038694606}
   - component: {fileID: 95237880792832874}
   - component: {fileID: 114367608477038860}
-  - component: {fileID: 114330031549318082}
   - component: {fileID: 65386791031588682}
   - component: {fileID: 54669066673176882}
   - component: {fileID: 111467038358854044}
+  - component: {fileID: 114497833006693406}
   m_Layer: 5
   m_Name: man3
   m_TagString: man3
@@ -520,17 +520,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114330031549318082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1774773160193770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af695f48d5fbe84fb7811ab03df191b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114367608477038860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,6 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3634085025d7284a906076ee07f98a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upRight: 0
+  anim: {fileID: 0}
+  isMove: 0
+  isTogether: 0
 --- !u!114 &114385105066232714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,6 +567,30 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114497833006693406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774773160193770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af695f48d5fbe84fb7811ab03df191b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPress: 0
+  springBud: {fileID: 21300000, guid: 6b8c2cbad77c02b478aec3cd541a0a72, type: 3}
+  springLantern: {fileID: 21300000, guid: 00f37083d5ac1bf469f7c649ecbb0b50, type: 3}
+  springWreath: {fileID: 21300000, guid: a985047f804d06b4182f27e11be1220b, type: 3}
+  summerIceCream: {fileID: 21300000, guid: 50dab9ecd5ee5be409566db92c66a06f, type: 3}
+  summerRainy: {fileID: 21300000, guid: 0fe2af9169bfae84289bac4375746cdb, type: 3}
+  summerSurf: {fileID: 21300000, guid: a15b22de9d620ab40848804431e0540b, type: 3}
+  fallCrab: {fileID: 21300000, guid: b4fd327291f2fbc4eb508b720a29ab46, type: 3}
+  fallMaple: {fileID: 21300000, guid: 79e390a2ccd20ac4c975cbebcf31ae92, type: 3}
+  fallMoon: {fileID: 21300000, guid: 22c4ec364ddd8d2418859d01122de16a, type: 3}
+  winterBath: {fileID: 21300000, guid: 11ea5865dd3523646aa678adff4d266f, type: 3}
+  winterDeer: {fileID: 21300000, guid: 33cd6a365164d6448bc7779d6e59212d, type: 3}
+  winterSnowMan: {fileID: 21300000, guid: 7788eb2a02b607b4cba3670733f250c4, type: 3}
 --- !u!114 &114531121427015204
 MonoBehaviour:
   m_ObjectHideFlags: 1

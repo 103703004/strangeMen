@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 1028282640}
   - component: {fileID: 1028282639}
   - component: {fileID: 1028282641}
+  - component: {fileID: 1028282642}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -448,7 +449,18 @@ MonoBehaviour:
   man2: {fileID: 1209769260886318, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
   man3: {fileID: 1774773160193770, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
   man4: {fileID: 1486658792345676, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
-  man5: {fileID: 1084398910301040, guid: 432f83b42064a344889668d170a4b772, type: 2}
+  man5: {fileID: 1009424497896310, guid: 432f83b42064a344889668d170a4b772, type: 2}
+--- !u!114 &1028282642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028282638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f31f3927e8216141a1aa177b64336eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1388060580
 GameObject:
   m_ObjectHideFlags: 0

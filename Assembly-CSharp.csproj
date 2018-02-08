@@ -55,6 +55,7 @@
      <Compile Include="Assets\script\createMan.cs" />
      <Compile Include="Assets\script\move.cs" />
      <Compile Include="Assets\script\press.cs" />
+     <Compile Include="Assets\script\seasonChange.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

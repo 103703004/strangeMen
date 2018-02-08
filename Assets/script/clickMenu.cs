@@ -21,61 +21,88 @@ public class clickMenu : MonoBehaviour {
 
     public void menu1()
     {
-        //TODO 發芽 春
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 冰淇淋 夏
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 中秋 秋
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 泡澡 冬
-        //anim.PlayQueued("dropWreath");
+        if (seasonChange.season.Equals("spring"))
+        {
+            //TODO 發芽 春
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("summer"))
+        {
+            //TODO 冰淇淋 夏
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("fall"))
+        {
+            //TODO 中秋 秋
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("winter"))
+        {
+            //TODO 泡澡 冬
+            //anim.PlayQueued("dropWreath");
+        }
 
         StartAnimMain();
 
-        gameObject.GetComponent<press>().isPress = false;
+        gameObject.transform.parent.transform.parent.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
     }
 
     public void menu2()
     {
-        //TODO 天燈 春
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 衝浪 夏
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 落葉 秋
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 雪人 冬
-        //anim.PlayQueued("dropWreath");
+        if (seasonChange.season.Equals("spring"))
+        {
+            //TODO 天燈 春
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("summer"))
+        {
+            //TODO 衝浪 夏
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("fall"))
+        {
+            //TODO 落葉 秋
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("winter"))
+        {
+            //TODO 雪人 冬
+            //anim.PlayQueued("dropWreath");
+        }
 
         StartAnimMain();
 
-        gameObject.GetComponent<press>().isPress = false;
+        gameObject.transform.parent.transform.parent.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
     }
 
     public void menu3()
     {
-        //TODO 花圈 春
-        anim.PlayQueued("dropWreath");
-
-        //TODO 雨 夏
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 螃蟹 秋
-        //anim.PlayQueued("dropWreath");
-
-        //TODO 鹿 冬
-        //anim.PlayQueued("dropWreath");
+        if (seasonChange.season.Equals("spring"))
+        {
+            //TODO 花圈 春
+            anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("summer"))
+        {
+            //TODO 雨 夏
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("fall"))
+        {
+            //TODO 螃蟹 秋
+            //anim.PlayQueued("dropWreath");
+        }
+        else if (seasonChange.season.Equals("winter"))
+        {
+            //TODO 鹿 冬
+            //anim.PlayQueued("dropWreath");
+        }
 
         StartAnimMain();
 
-        gameObject.GetComponent<press>().isPress = false;
+        gameObject.transform.parent.transform.parent.GetComponent<press>().isPress = false;
         transform.parent.gameObject.SetActive(false);
     }
 

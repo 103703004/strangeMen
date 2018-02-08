@@ -8,6 +8,18 @@ public class press : MonoBehaviour {
     private Animation anim;
     private string manNumber;
     public bool isPress;
+    public Sprite springBud;
+    public Sprite springLantern;
+    public Sprite springWreath;
+    public Sprite summerIceCream;
+    public Sprite summerRainy;
+    public Sprite summerSurf;
+    public Sprite fallCrab;
+    public Sprite fallMaple;
+    public Sprite fallMoon;
+    public Sprite winterBath;
+    public Sprite winterDeer;
+    public Sprite winterSnowMan;
 
     // Use this for initialization
     void Start () {
@@ -35,6 +47,32 @@ public class press : MonoBehaviour {
         {
             isPress = true;
             gameObject.GetComponent<move>().isMove = false;
+
+            if (seasonChange.season.Equals("spring"))
+            {
+                gameObject.transform.Find("menu/menu1").gameObject.GetComponent<Image>().sprite = springBud;
+                gameObject.transform.Find("menu/menu2").gameObject.GetComponent<Image>().sprite = springLantern;
+                gameObject.transform.Find("menu/menu3").gameObject.GetComponent<Image>().sprite = springWreath;
+            }
+            else if (seasonChange.season.Equals("summer"))
+            {
+                gameObject.transform.Find("menu/menu1").gameObject.GetComponent<Image>().sprite = summerIceCream;
+                gameObject.transform.Find("menu/menu2").gameObject.GetComponent<Image>().sprite = summerSurf;
+                gameObject.transform.Find("menu/menu3").gameObject.GetComponent<Image>().sprite = summerRainy;
+            }
+            else if (seasonChange.season.Equals("fall"))
+            {
+                gameObject.transform.Find("menu/menu1").gameObject.GetComponent<Image>().sprite = fallMoon;
+                gameObject.transform.Find("menu/menu2").gameObject.GetComponent<Image>().sprite = fallMaple;
+                gameObject.transform.Find("menu/menu3").gameObject.GetComponent<Image>().sprite = fallCrab;
+            }
+            else if (seasonChange.season.Equals("winter"))
+            {
+                gameObject.transform.Find("menu/menu1").gameObject.GetComponent<Image>().sprite = winterBath;
+                gameObject.transform.Find("menu/menu2").gameObject.GetComponent<Image>().sprite = winterSnowMan;
+                gameObject.transform.Find("menu/menu3").gameObject.GetComponent<Image>().sprite = winterDeer;
+            }
+
             StopAnimMain();
         }
 

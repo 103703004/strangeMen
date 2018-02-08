@@ -12,7 +12,7 @@ public class createMan : MonoBehaviour {
     public GameObject man5;
     private GameObject body;
     private GameObject m;
-    private string url = "D://政大/數位內容畢製/body/1.png";
+    private string url;
     //private string url = "https://firebasestorage.googleapis.com/v0/b/webfinal-e58b9.appspot.com/o/%E5%83%91%E7%B7%A3.jpg?alt=media&token=f7634a76-4b94-4ac1-b57c-80f5eaaa0e4f";
     public static int manNumber;
     private Animation anim;
@@ -28,6 +28,7 @@ public class createMan : MonoBehaviour {
         {
             //body = m.transform.Find("body").gameObject;
             Debug.Log("space key was pressed");
+            url = "D://政大/數位內容畢製/body/1.png";
             StartCoroutine(loadImage());
             
         }
@@ -41,6 +42,86 @@ public class createMan : MonoBehaviour {
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
         www = new WWW(url);
         yield return www;
+
+/*        Debug.Log(www.error);
+        if (www.error == "Unknown Error")
+        {
+            url = "D://政大/數位內容畢製/body/2.png";
+            tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+            www = new WWW(url);
+            yield return www;
+
+            if(www.error == "Unknown Error")
+            {
+                url = "D://政大/數位內容畢製/body/3.png";
+                tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                www = new WWW(url);
+                yield return www;
+
+                if (www.error == "Unknown Error")
+                {
+                    url = "D://政大/數位內容畢製/body/4.png";
+                    tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                    www = new WWW(url);
+                    yield return www;
+
+                    if (www.error == "Unknown Error")
+                    {
+                        url = "D://政大/數位內容畢製/body/5.png";
+                        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                        www = new WWW(url);
+                        yield return www;
+
+                        if (www.error == "Unknown Error")
+                        {
+                            Debug.Log("??");
+                        }
+                        else
+                        {
+                            www.LoadImageIntoTexture(tex);
+                            m = Instantiate(man5, new Vector3(0, 0, 90), Quaternion.identity);
+                            anim = m.GetComponent<Animation>();
+                            anim["man5"].wrapMode = WrapMode.Loop;
+                            anim.PlayQueued("man5");
+                        }
+                    }
+                    else
+                    {
+                        www.LoadImageIntoTexture(tex);
+                        m = Instantiate(man4, new Vector3(0, 0, 90), Quaternion.identity);
+                        anim = m.GetComponent<Animation>();
+                        anim["man4"].wrapMode = WrapMode.Loop;
+                        anim.PlayQueued("man4");
+                    }
+                }
+                else
+                {
+                    www.LoadImageIntoTexture(tex);
+                    m = Instantiate(man3, new Vector3(0, 0, 90), Quaternion.identity);
+                    anim = m.GetComponent<Animation>();
+                    anim["man3"].wrapMode = WrapMode.Loop;
+                    anim.PlayQueued("man3");
+                }
+            }
+            else
+            {
+                www.LoadImageIntoTexture(tex);
+                m = Instantiate(man2, new Vector3(0, 0, 90), Quaternion.identity);
+                anim = m.GetComponent<Animation>();
+                anim["man2"].wrapMode = WrapMode.Loop;
+                anim.PlayQueued("man2");
+            }
+        }
+        else
+        {
+            www.LoadImageIntoTexture(tex);
+            m = Instantiate(man1, new Vector3(0, 0, 90), Quaternion.identity);
+            anim = m.GetComponent<Animation>();
+            anim["man1"].wrapMode = WrapMode.Loop;
+            anim.PlayQueued("man1");
+        }*/
+
+//        /*
         www.LoadImageIntoTexture(tex);
 
         if (manNumber == 1)
@@ -79,12 +160,14 @@ public class createMan : MonoBehaviour {
             anim.PlayQueued("man5");
             manNumber = 0;
         }
+//       */
 
         body = m.transform.Find("body").gameObject;
 
         Rect rec = new Rect(0, 0, tex.width, tex.height);
         Sprite s = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
-        //body.GetComponent<Image>().sprite = s;
+//        body.GetComponent<Image>().sprite = s;
         manNumber++;
     }
+
 }

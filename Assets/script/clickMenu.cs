@@ -34,12 +34,12 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("fall"))
         {
             //TODO 中秋 秋
-            //anim.PlayQueued("dropWreath");
+			anim.PlayQueued("MoonFestival");
         }
         else if (seasonChange.season.Equals("winter"))
         {
             //TODO 泡澡 冬
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("bath");
         }
 
         StartAnimMain();

@@ -133,12 +133,12 @@ public class move : MonoBehaviour {
         {
             StopAnimMain();
         }
-
-        x = -x;
-        y = -y;
-
+       
         if (!gameObject.GetComponent<press>().isPress)
         {
+            x = -x;
+            y = -y;
+
             if (upRight)
             {
                 anim.PlayQueued("leftFlip");

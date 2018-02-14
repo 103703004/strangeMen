@@ -34,7 +34,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("fall"))
         {
             //TODO 中秋 秋
-			anim.PlayQueued("MoonFestival");
+			anim.PlayQueued("MoonFestival");//MoonFestival1;MoonFestival2;MoonFestival3;MoonFestival4;MoonFestival5
         }
         else if (seasonChange.season.Equals("winter"))
         {

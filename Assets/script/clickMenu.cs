@@ -24,8 +24,7 @@ public class clickMenu : MonoBehaviour {
         if (seasonChange.season.Equals("spring"))
         {
             //TODO 發芽 春
-           // anim.PlayQueued("treeAnimation");
-            anim.PlayQueued("icecreamAnimation");
+            anim.PlayQueued("treeAnimation");
         }
         else if (seasonChange.season.Equals("summer"))
         {
@@ -70,7 +69,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("winter"))
         {
             //TODO 雪人 冬
-            //anim.PlayQueued("dropWreath");
+            //anim.PlayQueued("snowmanAnimation");
         }
 
         StartAnimMain();
@@ -84,7 +83,7 @@ public class clickMenu : MonoBehaviour {
         if (seasonChange.season.Equals("spring"))
         {
             //TODO 花圈 春
-            anim.PlayQueued("snowmanAnimation");
+            //anim.PlayQueued("dropWreath");
         }
         else if (seasonChange.season.Equals("summer"))
         {

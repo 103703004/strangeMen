@@ -92,7 +92,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("fall"))
         {
             //TODO 螃蟹 秋
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("crabAnimation");
         }
         else if (seasonChange.season.Equals("winter"))
         {

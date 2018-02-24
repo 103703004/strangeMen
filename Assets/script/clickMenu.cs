@@ -24,7 +24,7 @@ public class clickMenu : MonoBehaviour {
         if (seasonChange.season.Equals("spring"))
         {
             //TODO 發芽 春
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("treeAnimation");
         }
         else if (seasonChange.season.Equals("summer"))
         {

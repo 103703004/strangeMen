@@ -1,13 +1,14 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+﻿<Properties StartupConfiguration="{A68AA49A-615A-7B82-C1ED-4143902D4FBD}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/clickMenu.cs">
     <Files>
       <File FileName="Assets/script/clickMenu.cs" Line="37" Column="33" />
-      <File FileName="Assets/script/seasonChange.cs" Line="11" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.strangeMen-master PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>

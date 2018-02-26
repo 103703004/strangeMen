@@ -68,7 +68,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("winter"))
         {
             //TODO 雪人 冬
-            //anim.PlayQueued("dropWreath");
+			anim.PlayQueued("snowAnimation");
         }
 
         StartAnimMain();

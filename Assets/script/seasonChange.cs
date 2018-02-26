@@ -8,7 +8,7 @@ public class seasonChange : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		season = "summer";//spring;summer;fall;winter
+		season = "winter";//spring;summer;fall;winter
 	}
 	
 	// Update is called once per frame

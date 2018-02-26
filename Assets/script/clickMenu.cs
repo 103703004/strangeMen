@@ -29,7 +29,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("summer"))
         {
             //TODO 冰淇淋 夏
-            //anim.PlayQueued("dropWreath");
+			anim.PlayQueued("icecreamAnimation");
         }
         else if (seasonChange.season.Equals("fall"))
         {

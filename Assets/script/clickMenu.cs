@@ -34,7 +34,8 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("fall"))
         {
             //TODO 中秋 秋
-			anim.PlayQueued("MoonFestival");//MoonFestival1;MoonFestival2;MoonFestival3;MoonFestival4;MoonFestival5
+			//anim.PlayQueued("MoonFestival");//MoonFestival1;MoonFestival2;MoonFestival3;MoonFestival4;MoonFestival5
+            manyAnim("MoonFestival");
         }
         else if (seasonChange.season.Equals("winter"))
         {
@@ -134,5 +135,29 @@ public class clickMenu : MonoBehaviour {
             anim.PlayQueued("man5");
         }
         transform.parent.transform.parent.gameObject.GetComponent<move>().isMove = true;
+    }
+
+    private void manyAnim(string name)
+    {
+        if (manNumber.Equals("man1"))
+        {
+            anim.PlayQueued(name + "1");
+        }
+        else if (manNumber.Equals("man2"))
+        {
+            anim.PlayQueued(name + "2");
+        }
+        else if (manNumber.Equals("man3"))
+        {
+            anim.PlayQueued(name + "3");
+        }
+        else if (manNumber.Equals("man4"))
+        {
+            anim.PlayQueued(name + "4");
+        }
+        else if (manNumber.Equals("man5"))
+        {
+            anim.PlayQueued(name + "5");
+        }
     }
 }

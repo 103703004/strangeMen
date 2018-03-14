@@ -126,35 +126,35 @@ public class createMan : MonoBehaviour {
 
         if (manNumber == 1)
         {
-            m = Instantiate(man1, new Vector3(0, 0, 90), Quaternion.identity);
+            m = Instantiate(man1, new Vector3(0, 0, 0), Quaternion.identity);
             anim = m.GetComponent<Animation>();
             anim["man1"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man1");
         }
         else if (manNumber == 2)
         {
-            m = Instantiate(man2, new Vector3(0, 0, 90), Quaternion.identity);
+            m = Instantiate(man2, new Vector3(0, 0, 0), Quaternion.identity);
             anim = m.GetComponent<Animation>();
             anim["man2"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man2");
         }
         else if (manNumber == 3)
         {
-            m = Instantiate(man3, new Vector3(0, 0, 90), Quaternion.identity);
+            m = Instantiate(man3, new Vector3(0, 0, 0), Quaternion.identity);
             anim = m.GetComponent<Animation>();
             anim["man3"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man3");
         }
         else if (manNumber == 4)
         {
-            m = Instantiate(man4, new Vector3(0, 0, 90), Quaternion.identity);
+            m = Instantiate(man4, new Vector3(0, 0, 0), Quaternion.identity);
             anim = m.GetComponent<Animation>();
             anim["man4"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man4");
         }
         else if (manNumber == 5)
         {
-            m = Instantiate(man5, new Vector3(0, 0, 90), Quaternion.identity);
+            m = Instantiate(man5, new Vector3(0, 0, 0), Quaternion.identity);
             anim = m.GetComponent<Animation>();
             anim["man5"].wrapMode = WrapMode.Loop;
             anim.PlayQueued("man5");

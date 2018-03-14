@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class seasonChange : MonoBehaviour {
 
+    private Animation anim;
     public static string season;
-    private float time = 10;
+    private float time = 20;
 
 	// Use this for initialization
 	void Start () {
+        anim = gameObject.GetComponent<Animation>();
         season = "spring";//spring;summer;fall;winter
         InvokeRepeating("changeSeason", time, time);
     }
@@ -21,12 +23,24 @@ public class seasonChange : MonoBehaviour {
     private void changeSeason()
     {
         if (season.Equals("spring"))
+        {
             season = "summer";
+            anim.Play("SpringToSummer");
+        }
         else if (season.Equals("summer"))
+        {
             season = "fall";
+            anim.Play("SummerToFall");
+        }
         else if (season.Equals("fall"))
+        {
             season = "winter";
+            anim.Play("FallToWinter");
+        }
         else if (season.Equals("winter"))
+        {
             season = "spring";
+            anim.Play("WinterToSpring");
+        }
     }
 }

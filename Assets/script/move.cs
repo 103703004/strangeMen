@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class move : MonoBehaviour {
 
+    private int randNum;
     private float x;
     private float y;
     private float minusX;
@@ -50,7 +51,7 @@ public class move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if((isMove) && (anim.IsPlaying("sayHiLeft") || anim.IsPlaying("sayHiRight") || anim.IsPlaying("rightFlip") || anim.IsPlaying("leftFlip") || anim.IsPlaying("man1") || anim.IsPlaying("man2") || anim.IsPlaying("man3") || anim.IsPlaying("man4") || anim.IsPlaying("man5")))
+        if((isMove) && (anim.IsPlaying("sayHiLeft") || anim.IsPlaying("sayHiRight") || anim.IsPlaying("rightFlip") || anim.IsPlaying("leftFlip") || anim.IsPlaying("man1") || anim.IsPlaying("man2") || anim.IsPlaying("man3") || anim.IsPlaying("man4") || anim.IsPlaying("man5") || anim.IsPlaying("beer")))
             transform.position += new Vector3(x, y, 0);
 
         if (transform.position.x > 215.84 || transform.position.x < -215.84)
@@ -81,7 +82,7 @@ public class move : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(gameObject.ToString() + " " + isTogether.ToString());
+        //Debug.Log(gameObject.ToString() + " " + isTogether.ToString());
         if(gameObject.GetComponent<press>().isPress)
         {
             isTogether = true;
@@ -113,15 +114,25 @@ public class move : MonoBehaviour {
             {
                 if (gameObject.transform.position.y - 10 < other.transform.position.y && gameObject.transform.position.y + 10 > other.transform.position.y)
                 {
-                    if (upRight)
+                    randNum = Random.Range(0, 2);
+                    Debug.Log(randNum);
+                    if(randNum == 1)
                     {
-                        anim.PlayQueued("sayHiRight");
-                        other.GetComponent<move>().anim.PlayQueued("sayHiLeft");
+                        if (upRight)
+                        {
+                            anim.PlayQueued("sayHiRight");
+                            other.GetComponent<move>().anim.PlayQueued("sayHiLeft");
+                        }
+                        else
+                        {
+                            anim.PlayQueued("sayHiLeft");
+                            other.GetComponent<move>().anim.PlayQueued("sayHiRight");
+                        }
                     }
                     else
                     {
-                        anim.PlayQueued("sayHiLeft");
-                        other.GetComponent<move>().anim.PlayQueued("sayHiRight");
+                        anim.PlayQueued("beer");
+                        other.GetComponent<move>().anim.PlayQueued("beer");
                     }
                     
                 }

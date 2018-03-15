@@ -564,11 +564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162a4526b2f3d84c974e4b7a455a1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  man1: {fileID: 1001309676201154, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
-  man2: {fileID: 1504360371016382, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
-  man3: {fileID: 1881124534431866, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
-  man4: {fileID: 1562525954298690, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
-  man5: {fileID: 1784804208720528, guid: 432f83b42064a344889668d170a4b772, type: 2}
+  man1: {fileID: 1764538773150320, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
+  man2: {fileID: 1290362775478594, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
+  man3: {fileID: 1280804595251140, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
+  man4: {fileID: 1182332030423894, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
+  man5: {fileID: 1245051447454788, guid: 432f83b42064a344889668d170a4b772, type: 2}
 --- !u!1 &1183706698
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2034842777
 RectTransform:
   m_ObjectHideFlags: 0

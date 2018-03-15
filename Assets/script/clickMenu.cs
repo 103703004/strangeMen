@@ -99,7 +99,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("winter"))
         {
             //TODO 鹿 冬
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("deer");
         }
 
         StartAnimMain();

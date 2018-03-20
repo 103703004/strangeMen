@@ -11,7 +11,7 @@ public class seasonChange : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = gameObject.GetComponent<Animation>();
-        season = "spring";//spring;summer;fall;winter
+        season = "winter";//spring;summer;fall;winter
         InvokeRepeating("changeSeason", time, time);
     }
 	

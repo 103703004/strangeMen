@@ -6,12 +6,12 @@ public class seasonChange : MonoBehaviour {
 
     private Animation anim;
     public static string season;
-    private float time = 20;
+    private float time = 10;
 
 	// Use this for initialization
 	void Start () {
         anim = gameObject.GetComponent<Animation>();
-        season = "winter";//spring;summer;fall;winter
+        season = "spring";//spring;summer;fall;winter
         InvokeRepeating("changeSeason", time, time);
     }
 	

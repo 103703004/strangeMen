@@ -65,7 +65,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("fall"))
         {
             //TODO 落葉 秋
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("maple");
         }
         else if (seasonChange.season.Equals("winter"))
         {

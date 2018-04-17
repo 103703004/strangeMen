@@ -60,7 +60,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("summer"))
         {
             //TODO 衝浪 夏
-            //anim.PlayQueued("dropWreath");
+            manyAnim("surf");
         }
         else if (seasonChange.season.Equals("fall"))
         {

@@ -12,8 +12,8 @@ public class createMan : MonoBehaviour {
     public GameObject man5;
     private GameObject body;
     private GameObject m;
+    //private string url = "ftp://nccudct:macbook@140.119.138.83/";
     private string url = "D://strangeMan/";
-    //private string url = "D://政大/數位內容畢製/body/";
     private string url1;
     public static int manNumber;
     private Animation anim;

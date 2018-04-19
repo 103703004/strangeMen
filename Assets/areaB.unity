@@ -564,11 +564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162a4526b2f3d84c974e4b7a455a1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  man1: {fileID: 1784697386172268, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
-  man2: {fileID: 1957047409643738, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
-  man3: {fileID: 1832516474903402, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
-  man4: {fileID: 1377299232238450, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
-  man5: {fileID: 1259188672383682, guid: 432f83b42064a344889668d170a4b772, type: 2}
+  man1: {fileID: 1799268838444874, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
+  man2: {fileID: 1475599811877630, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
+  man3: {fileID: 1579341032138122, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
+  man4: {fileID: 1305682244934594, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
+  man5: {fileID: 1874233330489206, guid: 432f83b42064a344889668d170a4b772, type: 2}
 --- !u!1 &1183706698
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ public class clickMenu : MonoBehaviour {
         else if (seasonChange.season.Equals("summer"))
         {
             //TODO 雨 夏
-            //anim.PlayQueued("dropWreath");
+            anim.PlayQueued("rain");
         }
         else if (seasonChange.season.Equals("fall"))
         {

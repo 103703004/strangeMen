@@ -54,6 +54,7 @@
      <Compile Include="Assets\script\clickMenu.cs" />
      <Compile Include="Assets\script\createMan.cs" />
      <Compile Include="Assets\script\move.cs" />
+     <Compile Include="Assets\script\playSound.cs" />
      <Compile Include="Assets\script\press.cs" />
      <Compile Include="Assets\script\seasonChange.cs" />
  <Reference Include="UnityEngine.UI">

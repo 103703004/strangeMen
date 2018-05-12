@@ -9,6 +9,7 @@ TagManager:
   - man3
   - man4
   - man5
+  - audio
   layers:
   - Default
   - TransparentFX

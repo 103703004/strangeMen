@@ -338,8 +338,8 @@ GameObject:
   - component: {fileID: 368803994}
   - component: {fileID: 368803993}
   m_Layer: 0
-  m_Name: tree
-  m_TagString: Untagged
+  m_Name: audioSource
+  m_TagString: audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 54d5c64513d3f6441b23b07f8ff3f371, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162a4526b2f3d84c974e4b7a455a1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  man1: {fileID: 1512907199512096, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
+  man1: {fileID: 1585331046974294, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
   man2: {fileID: 1292362893079396, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
   man3: {fileID: 1080295820355052, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
   man4: {fileID: 1364821918263002, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}

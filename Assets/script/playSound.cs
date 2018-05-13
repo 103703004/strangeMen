@@ -8,6 +8,13 @@ public class playSound : MonoBehaviour {
     public AudioClip moonFest;
     public AudioClip maple;
     public AudioClip crab;
+    public AudioClip horse;
+    public AudioClip bath;
+    public AudioClip snow;
+    public AudioClip coin;
+    public AudioClip icecream;
+    public AudioClip rain;
+    public AudioClip surf;
     private AudioSource audioS;
 
 	// Use this for initialization
@@ -19,6 +26,41 @@ public class playSound : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void playIcecream()
+    {
+        audioS.PlayOneShot(icecream);
+    }
+
+    void playRain()
+    {
+        audioS.PlayOneShot(rain);
+    }
+
+    void playSurf()
+    {
+        audioS.PlayOneShot(surf);
+    }
+
+    void playCoin()
+    {
+        audioS.PlayOneShot(coin);
+    }
+
+    void playSnow()
+    {
+        audioS.PlayOneShot(snow);
+    }
+
+    void playBath()
+    {
+        audioS.PlayOneShot(bath);
+    }
+
+    void playHorse()
+    {
+        audioS.PlayOneShot(horse);
+    }
 
     void playMaple()
     {

@@ -6614,7 +6614,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 8300000, guid: 54d5c64513d3f6441b23b07f8ff3f371, type: 3}
-  audioS: {fileID: 0}
+  moonFest: {fileID: 8300000, guid: 78b3da90184afc94184a1060c4ff649a, type: 3}
+  maple: {fileID: 8300000, guid: 8037a1592bc231242a961b8ca88bb0df, type: 3}
+  crab: {fileID: 8300000, guid: 5f5d35d381ed31444bda5f0c65dc1c50, type: 3}
+  horse: {fileID: 8300000, guid: 52bfb5105b6bd4a4f9eb2e31bb85840e, type: 3}
+  bath: {fileID: 8300000, guid: 0add8b05b2c42134fab3c63122a3b209, type: 3}
+  snow: {fileID: 8300000, guid: 7b38ad26d0fbc9842adeed198691e652, type: 3}
+  coin: {fileID: 8300000, guid: 82cd30e33429f214d9ba7c8c3f6cfe60, type: 3}
+  icecream: {fileID: 8300000, guid: 7dd771d5a351db64ab4bf924f9837899, type: 3}
+  rain: {fileID: 8300000, guid: e74b96d4c32c986468ac37098b6760dc, type: 3}
+  surf: {fileID: 8300000, guid: cd2dfd80a5ac1c549aea8823fde4c561, type: 3}
+  lantern: {fileID: 8300000, guid: 54dad11f969d4e04baa18fe91b9e71f2, type: 3}
+  flower: {fileID: 8300000, guid: a6afec6045e38214283ed36555cf73c7, type: 3}
 --- !u!114 &114799894731966948
 MonoBehaviour:
   m_ObjectHideFlags: 1

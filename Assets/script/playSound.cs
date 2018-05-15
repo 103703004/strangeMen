@@ -15,6 +15,8 @@ public class playSound : MonoBehaviour {
     public AudioClip icecream;
     public AudioClip rain;
     public AudioClip surf;
+    public AudioClip lantern;
+    public AudioClip flower;
     private AudioSource audioS;
 
 	// Use this for initialization
@@ -26,6 +28,16 @@ public class playSound : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void playLantern()
+    {
+        audioS.PlayOneShot(lantern);
+    }
+
+    void playFlower()
+    {
+        audioS.PlayOneShot(flower);
+    }
 
     void playIcecream()
     {

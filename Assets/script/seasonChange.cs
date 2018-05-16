@@ -6,7 +6,7 @@ public class seasonChange : MonoBehaviour {
 
     private Animation anim;
     public static string season;
-    private float time = 1000;
+    private float time = 30;
 
 	// Use this for initialization
 	void Start () {

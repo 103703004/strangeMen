@@ -24,6 +24,8 @@ public class createMan : MonoBehaviour
     public static int manNumber;
     private Animation anim;
 
+    GameObject[] menObjects = {};
+
     string[] manKind = { "1.png", "2.png", "3.png", "4.png", "5.png" };
     string[] manName = { "man1", "man2", "man3", "man4", "man5" };
 
@@ -31,10 +33,14 @@ public class createMan : MonoBehaviour
     int interval = 5;
     float nextTime = 0;
 
+    int loadInterval = 1;
+    float loadNextTime = 0;
+
     // Use this for initialization
     void Start()
     {
         //manNumber = 1;
+        menObjects = new GameObject[] { man1, man2, man3, man4, man5 };
 
         // begin connecting to the server
         client.Connect();
@@ -49,6 +55,15 @@ public class createMan : MonoBehaviour
             nextTime += interval;
             Thread t = new Thread(new ThreadStart(downloadImg));
             t.Start();
+            //StartCoroutine(LoadMan());
+            //loadMen();
+        }
+
+        if (Time.time >= loadNextTime)
+        {
+            loadNextTime += loadInterval;
+            //Thread t = new Thread(new ThreadStart(downloadImg));
+            //t.Start();
             //StartCoroutine(LoadMan());
             loadMen();
         }
@@ -90,7 +105,8 @@ public class createMan : MonoBehaviour
                     tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
                     tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
 
-                    m = Instantiate(man1, new Vector3(0, 0, 80), Quaternion.identity);
+
+                    m = Instantiate(menObjects[ManIndex], new Vector3(0, 0, 80), Quaternion.identity);
                     anim = m.GetComponent<Animation>();
                     anim[manName[ManIndex]].wrapMode = WrapMode.Loop;
                     anim.PlayQueued(manName[ManIndex]);
@@ -100,7 +116,8 @@ public class createMan : MonoBehaviour
                     Sprite s = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
                     body.GetComponent<Image>().sprite = s;
 
-                    File.Delete("img/" + man);
+                    //File.Delete("img/" + man);
+                    File.Move("img/" + man, "img/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
 
                 }
                 catch (System.Exception e)
@@ -114,7 +131,7 @@ public class createMan : MonoBehaviour
     }
 
 
-    IEnumerator LoadMan()
+   /* IEnumerator LoadMan()
     {
 
         Texture2D tex = null;
@@ -146,7 +163,7 @@ public class createMan : MonoBehaviour
                 break;
             }
         }
-    }
+    }*/
 
     void downloadImg()
     {
@@ -167,6 +184,8 @@ public class createMan : MonoBehaviour
                     {
                         // delete the file
                         //client.DeleteFile("strangMen/" + man);
+                        client.Rename("strangMen/" + man, "strangMen/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
+
                         //client.Disconnect();
                         return;
                     }

@@ -6625,7 +6625,7 @@ MonoBehaviour:
   rain: {fileID: 8300000, guid: e74b96d4c32c986468ac37098b6760dc, type: 3}
   surf: {fileID: 8300000, guid: cd2dfd80a5ac1c549aea8823fde4c561, type: 3}
   lantern: {fileID: 8300000, guid: 54dad11f969d4e04baa18fe91b9e71f2, type: 3}
-  flower: {fileID: 8300000, guid: a6afec6045e38214283ed36555cf73c7, type: 3}
+  flower: {fileID: 8300000, guid: d462bb2d87a5f8c4aba774a828311d50, type: 3}
 --- !u!114 &114799894731966948
 MonoBehaviour:
   m_ObjectHideFlags: 1

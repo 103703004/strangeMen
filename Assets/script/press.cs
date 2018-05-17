@@ -20,6 +20,8 @@ public class press : MonoBehaviour {
     public Sprite winterBath;
     public Sprite winterDeer;
     public Sprite winterSnowMan;
+    private float t1, t2, t3;
+    private bool b;
 
     // Use this for initialization
     void Start () {
@@ -30,8 +32,31 @@ public class press : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetMouseButtonDown(0) && b)
+        {
+            t3 = Time.realtimeSinceStartup;
+            if (t3 - t2 < 0.2)
+            {
+                if (t2 - t1 < 0.2)
+                {
+                    print("triple click");
+                    Destroy(this.gameObject);
+                }
+                t1 = t2;
+            }
+            t2 = t3;
+            
+        }
+    }
+
+    void OnMouseEnter()
+    {
+        b = true;
+    }
+    void OnMouseExit()
+    {
+        b = false;
+    }
 
     void OnMouseDown()
     {

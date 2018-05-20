@@ -10,6 +10,7 @@ TagManager:
   - man4
   - man5
   - audio
+  - menu
   layers:
   - Default
   - TransparentFX

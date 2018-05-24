@@ -23,6 +23,7 @@ public class createMan : MonoBehaviour
     //private string url1;
     public static int manNumber;
     private Animation anim;
+    private int count;
 
     GameObject[] menObjects = {};
 
@@ -39,6 +40,8 @@ public class createMan : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        count = 0;
+
         //manNumber = 1;
         menObjects = new GameObject[] { man1, man2, man3, man4, man5 };
 
@@ -110,6 +113,9 @@ public class createMan : MonoBehaviour
                     anim = m.GetComponent<Animation>();
                     anim[manName[ManIndex]].wrapMode = WrapMode.Loop;
                     anim.PlayQueued(manName[ManIndex]);
+
+                    count++;
+                    m.GetComponent<move>().sequence = count;
 
                     body = m.transform.Find("body").gameObject;
                     Rect rec = new Rect(0, 0, tex.width, tex.height);

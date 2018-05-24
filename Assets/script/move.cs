@@ -14,6 +14,7 @@ public class move : MonoBehaviour {
     private string manNumber;
     public bool isMove;
     public bool isTogether;
+    public int sequence;
 
     // Use this for initialization
     void Start () {

@@ -72,6 +72,7 @@ public class press : MonoBehaviour {
         {
             isPress = true;
             gameObject.GetComponent<move>().isMove = false;
+            Debug.Log(gameObject.GetComponent<move>().sequence);
 
             if (seasonChange.season.Equals("spring"))
             {

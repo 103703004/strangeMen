@@ -22,7 +22,7 @@ public class move : MonoBehaviour {
         isMove = true;
         anim = GetComponent<Animation>();
         manNumber = tag;
-        Debug.Log(manNumber);
+        //Debug.Log(manNumber);
         x = Random.Range(0.2f, 0.4f);
         y = Random.Range(0.05f, 0.2f);
         //Debug.Log(x);
@@ -116,7 +116,7 @@ public class move : MonoBehaviour {
                 if (gameObject.transform.position.y - 10 < other.transform.position.y && gameObject.transform.position.y + 10 > other.transform.position.y)
                 {
                     randNum = Random.Range(0, 2);
-                    Debug.Log(randNum);
+                    //Debug.Log(randNum);
                     if(randNum == 1)
                     {
                         if (upRight)

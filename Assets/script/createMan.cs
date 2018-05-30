@@ -24,6 +24,7 @@ public class createMan : MonoBehaviour
     public static int manNumber;
     private Animation anim;
     private int count;
+    private int MAX_MAN_NUMBER;
 
     GameObject[] menObjects = {};
 
@@ -41,6 +42,7 @@ public class createMan : MonoBehaviour
     void Start()
     {
         count = 0;
+        MAX_MAN_NUMBER = 5;
 
         //manNumber = 1;
         menObjects = new GameObject[] { man1, man2, man3, man4, man5 };
@@ -99,8 +101,8 @@ public class createMan : MonoBehaviour
 
                 int ManIndex = Array.IndexOf(manKind, man);
 
-                Debug.Log(man);
-                Debug.Log(ManIndex);
+                //Debug.Log(man);
+                //Debug.Log(ManIndex);
 
                 try
                 {
@@ -116,6 +118,52 @@ public class createMan : MonoBehaviour
 
                     count++;
                     m.GetComponent<move>().sequence = count;
+
+                    if(count > MAX_MAN_NUMBER)
+                    {
+                        var man1 = GameObject.FindGameObjectsWithTag("man1");
+                        var man2 = GameObject.FindGameObjectsWithTag("man2");
+                        var man3 = GameObject.FindGameObjectsWithTag("man3");
+                        var man4 = GameObject.FindGameObjectsWithTag("man4");
+                        var man5 = GameObject.FindGameObjectsWithTag("man5");
+
+                        
+                        foreach (GameObject myMan in man1)
+                        {
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                            {
+                                Destroy(myMan);
+                            }
+                        }
+                        foreach (GameObject myMan in man2)
+                        {
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                            {
+                                Destroy(myMan);
+                            }
+                        }
+                        foreach (GameObject myMan in man3)
+                        {
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                            {
+                                Destroy(myMan);
+                            }
+                        }
+                        foreach (GameObject myMan in man4)
+                        {
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                            {
+                                Destroy(myMan);
+                            }
+                        }
+                        foreach (GameObject myMan in man5)
+                        {
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                            {
+                                Destroy(myMan);
+                            }
+                        }
+                    }
 
                     body = m.transform.Find("body").gameObject;
                     Rect rec = new Rect(0, 0, tex.width, tex.height);

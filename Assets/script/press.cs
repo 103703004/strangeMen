@@ -22,6 +22,7 @@ public class press : MonoBehaviour {
     public Sprite winterSnowMan;
     private float t1, t2, t3;
     private bool b;
+    //public Text text;
 
     // Use this for initialization
     void Start () {
@@ -60,6 +61,7 @@ public class press : MonoBehaviour {
 
     void OnMouseDown()
     {
+        //text.text = gameObject.transform.position.x + " " + gameObject.transform.position.y;
         GameObject menu = gameObject.transform.Find("menu").gameObject;
         menu.SetActive(!menu.activeInHierarchy);
         if (!menu.activeSelf)

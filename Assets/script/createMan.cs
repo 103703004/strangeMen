@@ -42,7 +42,7 @@ public class createMan : MonoBehaviour
     void Start()
     {
         count = 0;
-        MAX_MAN_NUMBER = 5;
+        MAX_MAN_NUMBER = 15;
 
         //manNumber = 1;
         menObjects = new GameObject[] { man1, man2, man3, man4, man5 };

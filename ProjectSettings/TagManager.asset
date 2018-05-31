@@ -11,6 +11,7 @@ TagManager:
   - man5
   - audio
   - menu
+  - text
   layers:
   - Default
   - TransparentFX

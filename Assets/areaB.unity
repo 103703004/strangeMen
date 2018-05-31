@@ -674,11 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162a4526b2f3d84c974e4b7a455a1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  man1: {fileID: 1585331046974294, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
-  man2: {fileID: 1292362893079396, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
-  man3: {fileID: 1080295820355052, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
-  man4: {fileID: 1364821918263002, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
-  man5: {fileID: 1207702139225678, guid: 432f83b42064a344889668d170a4b772, type: 2}
+  man1: {fileID: 1296049537299700, guid: dfc25227aeeadbf48a0227e0d94f9111, type: 2}
+  man2: {fileID: 1852437088432470, guid: fa985a5ccc03f05449b0e07e60b8d620, type: 2}
+  man3: {fileID: 1771683837528632, guid: 10bbb41d6b000624594aa3842866ed05, type: 2}
+  man4: {fileID: 1885642036507180, guid: fbab7041f617c3f4d86475113449fb4a, type: 2}
+  man5: {fileID: 1855637442762832, guid: 432f83b42064a344889668d170a4b772, type: 2}
 --- !u!1 &1183706698
 GameObject:
   m_ObjectHideFlags: 0

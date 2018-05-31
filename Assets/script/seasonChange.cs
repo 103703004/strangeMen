@@ -6,7 +6,7 @@ public class seasonChange : MonoBehaviour {
 
     private Animation anim;
     public static string season;
-    private float time = 10;
+    private float time = 120;
     private GameObject[] menus;
     private Animation anim1;
     private string manNumber;

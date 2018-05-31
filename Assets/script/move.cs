@@ -63,11 +63,13 @@ public class move : MonoBehaviour {
             StopAnimMain();
 
             if (upRight)
-                anim.PlayQueued("leftFlip");
+            {
+                //anim.PlayQueued("leftFlip");
+            }
             else
-                anim.PlayQueued("rightFlip");
+                //anim.PlayQueued("rightFlip");
 
-            upRight = !upRight;
+            //upRight = !upRight;
 
             StartAnimMain();
         }
@@ -95,11 +97,11 @@ public class move : MonoBehaviour {
 
             if (upRight)
             {
-                anim.PlayQueued("leftFlip");
+                //anim.PlayQueued("leftFlip");
             }
             else
             {
-                anim.PlayQueued("rightFlip");
+                //anim.PlayQueued("rightFlip");
             }
             
         }
@@ -153,15 +155,15 @@ public class move : MonoBehaviour {
 
             if (upRight)
             {
-                anim.PlayQueued("leftFlip");
+                //anim.PlayQueued("leftFlip");
             }
             else
             {
-                anim.PlayQueued("rightFlip");
+                //anim.PlayQueued("rightFlip");
             }
 
             StartAnimMain();
-            upRight = !upRight;
+            //upRight = !upRight;
         }
         
         isTogether = false;

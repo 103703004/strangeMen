@@ -37,7 +37,7 @@ public class createMan : MonoBehaviour
 
     int loadInterval = 1;
     float loadNextTime = 0;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -54,7 +54,6 @@ public class createMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Time.time >= nextTime)
         {
             nextTime += interval;
@@ -73,8 +72,8 @@ public class createMan : MonoBehaviour
             loadMen();
         }
 
-        //     if (Input.GetKeyDown(KeyCode.Space))
-        //     {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
         //         //body = m.transform.Find("body").gameObject;
         //         //Debug.Log("space key was pressed");
         //         //url1 = url + "1.png";
@@ -96,9 +95,8 @@ public class createMan : MonoBehaviour
 
         foreach (var man in manKind)
         {
-            if (File.Exists("img/" + man))
+			if (System.IO.File.Exists("img/" + man))
             {
-
                 int ManIndex = Array.IndexOf(manKind, man);
 
                 //Debug.Log(man);
@@ -106,8 +104,8 @@ public class createMan : MonoBehaviour
 
                 try
                 {
-                    fileData = File.ReadAllBytes("img/" + man);
-                    tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+					fileData = System.IO.File.ReadAllBytes("img/" + man);
+					tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
                     tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
 
                     m = Instantiate(menObjects[ManIndex], new Vector3(0, 0, 80), Quaternion.identity);
@@ -115,88 +113,83 @@ public class createMan : MonoBehaviour
                     anim[manName[ManIndex]].wrapMode = WrapMode.Loop;
                     anim.PlayQueued(manName[ManIndex]);
 
-                    count++;
-                    m.GetComponent<move>().sequence = count;
+					count++;
 
-                    if(count > MAX_MAN_NUMBER){
-                        var man1 = GameObject.FindGameObjectsWithTag("man1");
-                        var man2 = GameObject.FindGameObjectsWithTag("man2");
-                        var man3 = GameObject.FindGameObjectsWithTag("man3");
-                        var man4 = GameObject.FindGameObjectsWithTag("man4");
-                        var man5 = GameObject.FindGameObjectsWithTag("man5");
-                        foreach (GameObject myMan in man1){
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
-                                Destroy(myMan);
-                            }
-                        }
-                        foreach (GameObject myMan in man2){
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
-                                Destroy(myMan);
-                            }
-                        }
-                        foreach (GameObject myMan in man3){
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
-                                Destroy(myMan);
-                            }
-                        }
-						foreach (GameObject myMan in man4){
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
-                                Destroy(myMan);
-                            }
-                        }
-                        foreach (GameObject myMan in man5){
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
-                                Destroy(myMan);
-                            }
-                        }
-                    }
-                    
                     body = m.transform.Find("body").gameObject;
                     Rect rec = new Rect(0, 0, tex.width, tex.height);
                     Sprite s = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
                     body.GetComponent<Image>().sprite = s;
-                    
+                
                     //File.Delete("img/" + man);
 					File.Move("img/" + man, "img/" + DateTime.Now.ToString("yyyyMMddHHmmss") + '-' + man);
-
-
-                }
-                catch (System.Exception e)
-                {
+   					//System.IO.File.Copy("img/" + man, "img/" + DateTime.Now.ToString("yyyyMMddHHmmss") + '-' + man);
+					//System.IO.File.Delete("img/" + man);
+                    
+				}catch (System.Exception e){
                     Debug.LogWarning(e);
                 }
-
+                   
                 break;
             }
         }
-    }
-       
-    void downloadImg()
-    {
 
+		m.GetComponent<move>().sequence = count;
+        if (count > MAX_MAN_NUMBER){
+            var allMan1 = GameObject.FindGameObjectsWithTag("man1");
+            var allMan2 = GameObject.FindGameObjectsWithTag("man2");
+            var allMan3 = GameObject.FindGameObjectsWithTag("man3");
+            var allMan4 = GameObject.FindGameObjectsWithTag("man4");
+            var allMan5 = GameObject.FindGameObjectsWithTag("man5");
+            foreach (GameObject myMan in allMan1){
+                if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                {
+                    Destroy(myMan);
+                }
+            }
+            foreach (GameObject myMan in allMan2){
+                if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                {
+                    Destroy(myMan);
+                }
+            }
+            foreach (GameObject myMan in allMan3){
+                if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                {
+                    Destroy(myMan);
+                }
+            }
+            foreach (GameObject myMan in allMan4){
+                if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                {
+                    Destroy(myMan);
+                }
+            }
+            foreach (GameObject myMan in allMan5){
+                if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
+                {
+                    Destroy(myMan);
+                }
+            }
+        }
+    }
+      
+
+    void downloadImg(){
         // begin connecting to the server
         //client.Connect();
-
-        foreach (var man in manKind)
-        {
-
+        foreach (var man in manKind){
             // check if a file exists
-            if (client.FileExists("strangMen/" + man))
-            {
-
+            if (client.FileExists("strangMen/" + man)){
                 Progress<double> progress = new Progress<double>(x => {
                     // When progress in unknown, -1 will be sent
-                    if (x >= 100)
-                    {
+                    if (x >= 100){
                         // delete the file
                         //client.DeleteFile("strangMen/" + man);
                         client.Rename("strangMen/" + man, "strangMen/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
-
                         //client.Disconnect();
                         return;
                     }
                 });
-
                 client.DownloadFile(@"img/" + man, "strangMen/" + man, true, FluentFTP.FtpVerify.Retry, progress);
                 break;
             }

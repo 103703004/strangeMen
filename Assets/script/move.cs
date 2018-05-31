@@ -43,9 +43,9 @@ public class move : MonoBehaviour {
         }
         if (!upRight)
         {
-            StopAnimMain();
+            //StopAnimMain();
 
-            anim.PlayQueued("leftFlip");
+            //anim.PlayQueued("leftFlip");
         }
         StartAnimMain();
     }

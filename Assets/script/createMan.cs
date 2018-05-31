@@ -110,7 +110,6 @@ public class createMan : MonoBehaviour
                     tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
                     tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
 
-
                     m = Instantiate(menObjects[ManIndex], new Vector3(0, 0, 80), Quaternion.identity);
                     anim = m.GetComponent<Animation>();
                     anim[manName[ManIndex]].wrapMode = WrapMode.Loop;
@@ -119,59 +118,47 @@ public class createMan : MonoBehaviour
                     count++;
                     m.GetComponent<move>().sequence = count;
 
-                    if(count > MAX_MAN_NUMBER)
-                    {
+                    if(count > MAX_MAN_NUMBER){
                         var man1 = GameObject.FindGameObjectsWithTag("man1");
                         var man2 = GameObject.FindGameObjectsWithTag("man2");
                         var man3 = GameObject.FindGameObjectsWithTag("man3");
                         var man4 = GameObject.FindGameObjectsWithTag("man4");
                         var man5 = GameObject.FindGameObjectsWithTag("man5");
-
-                        
-                        foreach (GameObject myMan in man1)
-                        {
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
-                            {
+                        foreach (GameObject myMan in man1){
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
                                 Destroy(myMan);
                             }
                         }
-                        foreach (GameObject myMan in man2)
-                        {
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
-                            {
+                        foreach (GameObject myMan in man2){
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
                                 Destroy(myMan);
                             }
                         }
-                        foreach (GameObject myMan in man3)
-                        {
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
-                            {
+                        foreach (GameObject myMan in man3){
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
                                 Destroy(myMan);
                             }
                         }
-                        foreach (GameObject myMan in man4)
-                        {
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
-                            {
+						foreach (GameObject myMan in man4){
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
                                 Destroy(myMan);
                             }
                         }
-                        foreach (GameObject myMan in man5)
-                        {
-                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER)
-                            {
+                        foreach (GameObject myMan in man5){
+                            if (myMan.GetComponent<move>().sequence <= count - MAX_MAN_NUMBER){
                                 Destroy(myMan);
                             }
                         }
                     }
-
+                    
                     body = m.transform.Find("body").gameObject;
                     Rect rec = new Rect(0, 0, tex.width, tex.height);
                     Sprite s = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
                     body.GetComponent<Image>().sprite = s;
-
+                    
                     //File.Delete("img/" + man);
-                    File.Move("img/" + man, "img/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
+					File.Move("img/" + man, "img/" + DateTime.Now.ToString("yyyyMMddHHmmss") + '-' + man);
+
 
                 }
                 catch (System.Exception e)
@@ -183,7 +170,38 @@ public class createMan : MonoBehaviour
             }
         }
     }
+       
+    void downloadImg()
+    {
 
+        // begin connecting to the server
+        //client.Connect();
+
+        foreach (var man in manKind)
+        {
+
+            // check if a file exists
+            if (client.FileExists("strangMen/" + man))
+            {
+
+                Progress<double> progress = new Progress<double>(x => {
+                    // When progress in unknown, -1 will be sent
+                    if (x >= 100)
+                    {
+                        // delete the file
+                        //client.DeleteFile("strangMen/" + man);
+                        client.Rename("strangMen/" + man, "strangMen/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
+
+                        //client.Disconnect();
+                        return;
+                    }
+                });
+
+                client.DownloadFile(@"img/" + man, "strangMen/" + man, true, FluentFTP.FtpVerify.Retry, progress);
+                break;
+            }
+        }
+    }
 
    /* IEnumerator LoadMan()
     {
@@ -218,38 +236,6 @@ public class createMan : MonoBehaviour
             }
         }
     }*/
-
-    void downloadImg()
-    {
-
-        // begin connecting to the server
-        //client.Connect();
-
-        foreach (var man in manKind)
-        {
-
-            // check if a file exists
-            if (client.FileExists("strangMen/" + man))
-            {
-
-                Progress<double> progress = new Progress<double>(x => {
-                    // When progress in unknown, -1 will be sent
-                    if (x >= 100)
-                    {
-                        // delete the file
-                        //client.DeleteFile("strangMen/" + man);
-                        client.Rename("strangMen/" + man, "strangMen/" + man + '-' + DateTime.Now.ToString("yyyyMMddHHmmss") + ".png");
-
-                        //client.Disconnect();
-                        return;
-                    }
-                });
-
-                client.DownloadFile(@"img/" + man, "strangMen/" + man, true, FluentFTP.FtpVerify.Retry, progress);
-                break;
-            }
-        }
-    }
 
     //IEnumerator loadImage()
     //{

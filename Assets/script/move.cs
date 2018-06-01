@@ -125,11 +125,13 @@ public class move : MonoBehaviour {
                         if (upRight)
                         {
                             anim.PlayQueued("sayHiRight");
-                            other.GetComponent<move>().anim.PlayQueued("sayHiLeft");
+                            //other.GetComponent<move>().anim.PlayQueued("sayHiLeft");
+                            other.GetComponent<move>().anim.PlayQueued("sayHiRight");
                         }
                         else
                         {
-                            anim.PlayQueued("sayHiLeft");
+                            //anim.PlayQueued("sayHiLeft");
+                            anim.PlayQueued("sayHiRight");
                             other.GetComponent<move>().anim.PlayQueued("sayHiRight");
                         }
                     }

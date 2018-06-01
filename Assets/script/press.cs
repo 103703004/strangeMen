@@ -20,7 +20,7 @@ public class press : MonoBehaviour {
     public Sprite winterBath;
     public Sprite winterDeer;
     public Sprite winterSnowMan;
-    private float t1, t2, t3;
+    private float t1, t2, t3,t4,t5;
     private bool b;
     //public Text text;
 
@@ -35,18 +35,23 @@ public class press : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0) && b)
         {
-            t3 = Time.realtimeSinceStartup;
-            if (t3 - t2 < 0.2)
-            {
-                if (t2 - t1 < 0.2)
-                {
-                    print("triple click");
-                    Destroy(this.gameObject);
+            t5 = Time.realtimeSinceStartup;
+            if(t5 - t4 < 0.2) {
+                if(t4 - t3 < 0.2) {
+                    if (t3 - t2 < 0.2)
+                    {
+                        if (t2 - t1 < 0.2)
+                        {
+                            print("triple click");
+                            Destroy(this.gameObject);
+                        }
+                        t1 = t2;
+                    }
+                    t2 = t3;
                 }
-                t1 = t2;
+                t3 = t4;
             }
-            t2 = t3;
-            
+            t4 = t5;
         }
     }
 
